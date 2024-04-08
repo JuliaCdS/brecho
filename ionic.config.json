@@ -1,0 +1,7 @@
+{
+  "name": "brecho",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
