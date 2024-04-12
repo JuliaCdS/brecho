@@ -1,20 +1,140 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <div id="header">
+      <img src="assets/logo/logobrecho.png"/>
+    </div>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar id="search-toolbar">
+    <ion-searchbar placeholder="Procure seu produto"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
+  <ion-list>
+    <!-- Produto 1 -->
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <ion-img src="assets/products/blusa.png"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Blusa Feminina Preta</h2>
+        <p>Marca: C&A</p>
+        <p>Preço: R$ 15,99</p>
+      </ion-label>
+      <!-- Botão para comprar -->
+      <ion-button slot="end" shape="round" routerLink="/p1">Comprar</ion-button>
+    </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <!-- Produto 2 -->
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <ion-img src="assets/products/vestido.png"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Vestido Estampado</h2>
+        <p>Marca: Forever21</p>
+        <p>Preço: R$ 45,90</p>
+      </ion-label>
+      <!-- Botão para comprar -->
+      <ion-button slot="end" shape="round" routerLink="/p2">Comprar</ion-button>
+    </ion-item>
+
+    <!-- Produto 3 -->
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <ion-img src="assets/products/kimono.png"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Kimono feminino estampado</h2>
+        <p>Marca: Etiqueta</p>
+        <p>Preço: R$ 50,00</p>
+      </ion-label>
+        <!-- Botão para comprar -->
+        <ion-button slot="end" shape="round" routerLink="/p3">Comprar</ion-button>
+    </ion-item>
+
+    <!-- Produto 4 -->
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <ion-img src="assets/products/toppreto.png"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Top feminino estampado com amarração</h2>
+        <p>Marca: Etiqueta</p>
+        <p>Preço: R$ 26,05</p>
+      </ion-label>
+        <!-- Botão para comprar -->
+        <ion-button slot="end" shape="round" routerLink="/p4">Comprar</ion-button>
+    </ion-item>
+
+    <!-- Produto 5 -->
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <ion-img src="assets/products/jeans.png"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Calça Jeans feminina azul clara estonada</h2>
+        <p>Marca: Renner</p>
+        <p>Preço: R$ 36,98</p>
+      </ion-label>
+        <!-- Botão para comprar -->
+        <ion-button slot="end" shape="round" routerLink="/p5">Comprar</ion-button>
+    </ion-item>
+
+    <!-- Produto 6 -->
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <ion-img src="assets/products/jaqueta.png"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Jaqueta de sarja feminina vinho</h2>
+        <p>Marca: Renner</p>
+        <p>Preço: R$ 35,45</p>
+      </ion-label>
+        <!-- Botão para comprar -->
+        <ion-button slot="end" shape="round" routerLink="/p6">Comprar</ion-button>
+    </ion-item>
+
+    <!-- Produto 7 -->
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <ion-img src="assets/products/mickey.png"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Blusa feminina estampada</h2>
+        <p>Marca: Marisa</p>
+        <p>Preço: R$ 25,99</p>
+      </ion-label>
+        <!-- Botão para comprar -->
+        <ion-button slot="end" shape="round" routerLink="/p7">Comprar</ion-button>
+    </ion-item>
+
+    <!-- Adicione mais produtos conforme necessário -->
+  </ion-list>
+  
+        
+
 </ion-content>
+<ion-toolbar>
+<ion-tabs>
+  <ion-tab-bar>
+    <ion-tab-button routerLink="/home/tabs">
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button routerLink="/carrinho">
+      <ion-icon name="cart-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button routerLink="/profile">
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+</ion-toolbar>
+
