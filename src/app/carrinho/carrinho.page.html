@@ -13,57 +13,46 @@
 
 <ion-content class="ion-padding">
   <ion-title>Carrinho de compras</ion-title>
+  
   <!-- Lista de itens no carrinho -->
   <ion-list lines="full">
-    <ion-item >
+    <ion-item *ngFor="let item of carrinho" lines="full">
       <ion-thumbnail slot="start">
-        <ion-img src="assets/products/kimono.png"></ion-img>
+        <ion-img [src]="item.imagem"></ion-img>
       </ion-thumbnail>
       <ion-label>
-        <h2></h2>
-        <p>Marca: Etiqueta</p>
-        <p>Preço: R$ 50,00</p>
+        <h2>{{ item.nome }}</h2>
+        <p>Marca: {{ item.marca }}</p>
+        <p>Preço: R$ {{ item.preco.toFixed(2) }}</p>
       </ion-label>
-      <ion-button color="danger" slot="end" >Remover</ion-button>
-    </ion-item>
-  </ion-list>
-
-  <ion-list lines="full">
-    <ion-item >
-      <ion-thumbnail slot="start">
-        <ion-img src="assets/products/jaqueta.png"></ion-img>
-      </ion-thumbnail>
-      <ion-label>
-        <h2></h2>
-        <p>Marca: Renner</p>
-        <p>Preço: R$ 35,45</p>
-      </ion-label>
-      <ion-button color="danger" slot="end" >Remover</ion-button>
+      <ion-button color="danger" slot="end" (click)="removerDoCarrinho(item)">Remover</ion-button>
     </ion-item>
   </ion-list>
 
   <!-- Total do carrinho -->
   <ion-item>
     <ion-label slot="start">Total:</ion-label>
-    <ion-text slot="end">R$ 85,45</ion-text>
+    <ion-text slot="end">R$ {{ calcularTotal().toFixed(2) }}</ion-text>
   </ion-item>
 
   <!-- Botão para finalizar a compra -->
-  <ion-button expand="block" shape="round" >Finalizar Compra</ion-button>
+  <ion-button expand="block" shape="round" (click)="finalizarCompra()">Finalizar Compra</ion-button>
 </ion-content>
 
-<ion-toolbar>
-  <ion-tabs>
-    <ion-tab-bar>
-      <ion-tab-button routerLink="/home/tabs">
-        <ion-icon name="home-outline"></ion-icon>
-      </ion-tab-button>
-      <ion-tab-button routerLink="/carrinho">
-        <ion-icon name="cart-outline"></ion-icon>
-      </ion-tab-button>
-      <ion-tab-button routerLink="/profile">
-        <ion-icon name="person-outline"></ion-icon>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button routerLink="/home/tabs">
+          <ion-icon name="home-outline"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button routerLink="/carrinho" [tab]="carrinho.length > 0 ? 'carrinho' : null">
+          <ion-icon name="cart-outline"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button routerLink="/profile">
+          <ion-icon name="person-outline"></ion-icon>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
   </ion-toolbar>
+</ion-footer>

@@ -1,20 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';  // Importações corretas
 import { IonicModule } from '@ionic/angular';
-
 import { RegistroPageRoutingModule } from './registro-routing.module';
-
 import { RegistroPage } from './registro.page';
-import { InputModule } from '../components/input/input.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InputModule,
+    ReactiveFormsModule,  // ReactiveFormsModule deve estar aqui
     RegistroPageRoutingModule
   ],
   declarations: [RegistroPage]

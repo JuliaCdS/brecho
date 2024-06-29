@@ -1,0 +1,4 @@
+<ion-item>
+  <ion-label position="floating">{{ placeholder }}</ion-label>
+  <ion-input [type]="type" [value]="innerValue" (ionInput)="onInput($event)" (ionBlur)="onBlur()"></ion-input>
+</ion-item>

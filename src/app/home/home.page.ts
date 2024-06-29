@@ -1,26 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PecaService } from '../services/peca.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
-  itens = [
-    {
-      nome: 'Camiseta Vintage',
-      descricao: 'Camiseta vintage em ótimo estado',
-      preco: 20,
-      imagem: 'assets/camiseta_vintage.jpg'
-    },
-    {
-      nome: 'Bolsa de Couro',
-      descricao: 'Bolsa de couro legítimo, estilo retrô',
-      preco: 50,
-      imagem: 'assets/bolsa_couero.jpg'
-    },
-    // Adicione mais itens conforme necessário
-  ];
+export class HomePage implements OnInit {
+  pecas: any[] = [];
 
-  constructor() {}
+  constructor(private pecaService: PecaService) {}
+
+  ngOnInit() {
+    this.loadPecas();
+  }
+
+  loadPecas() {
+    this.pecaService.getAllPecas().subscribe(
+      (data) => {
+        this.pecas = data;
+      },
+      (error) => {
+        console.error('Erro ao carregar as peças:', error);
+      }
+    );
+  }
 }

@@ -14,10 +14,16 @@
     <img src="assets/logo/logobrecho.png"/>
   </div>
 
-  <form id="form">
-    <app-input placeholder="Email:"></app-input>
-    <app-input type="password" placeholder="Senha:"></app-input>
-    <ion-button expand="block" shape="round" routerLink="/home/tabs">Login</ion-button>
+  <form >
+   <br> <ion-item>
+      <ion-input type="email" label="Email" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password"  label="Senha" required></ion-input>
+    </ion-item>
+    <ion-button expand="full" routerLink="/home/tabs">Entrar</ion-button>
+
   </form>
+  
+  
 </ion-content>
- 

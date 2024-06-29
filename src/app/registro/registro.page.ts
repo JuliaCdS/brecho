@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-registro',
@@ -6,13 +8,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./registro.page.scss'],
 })
 export class RegistroPage {
-  name: string = '';
-  email: string = '';
-  password: string = '';
+  formulario: FormGroup;
 
-  constructor() {}
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+    this.formulario = this.formBuilder.group({
+      nome: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
+    });
+  }
 
-  register() {
-    // Lógica de registro aqui
+  onSubmit() {
+    if (this.formulario.valid) {
+      this.http.post('http://localhost:3000/register', this.formulario.value).subscribe(
+        (response: any) => {
+          console.log('Usuário registrado com sucesso', response);
+        },
+        (error: any) => {
+          console.error('Erro ao registrar o usuário', error);
+        }
+      );
+    } else {
+      console.error('Formulário inválido. Verifique os campos.');
+    }
   }
 }

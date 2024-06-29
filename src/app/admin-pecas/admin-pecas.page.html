@@ -1,0 +1,42 @@
+<!-- src/app/admin-pecas/admin-pecas.page.html -->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inserir Peça de Roupa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Nome da Peça</ion-label>
+      <ion-input type="text" [(ngModel)]="nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Descrição</ion-label>
+      <ion-textarea [(ngModel)]="descricao"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Preço</ion-label>
+      <ion-input type="number" [(ngModel)]="preco"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" (click)="inserirPeca()">Inserir Peça</ion-button>
+</ion-content>
+
+<ion-toolbar>
+<ion-tabs>
+  <ion-tab-bar>
+    <ion-tab-button routerLink="/home/tabs">
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button routerLink="/carrinho">
+      <ion-icon name="cart-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button routerLink="/profile">
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+</ion-toolbar>

@@ -1,20 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Importe ReactiveFormsModule
 
 import { IonicModule } from '@ionic/angular';
 
 import { LoginPageRoutingModule } from './login-routing.module';
-
 import { LoginPage } from './login.page';
-import { InputModule } from '../components/input/input.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
+    FormsModule, // Certifique-se de que FormsModule está importado
+    ReactiveFormsModule, // Importe ReactiveFormsModule
     IonicModule,
-    InputModule,
     LoginPageRoutingModule
   ],
   declarations: [LoginPage]

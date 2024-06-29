@@ -34,40 +34,20 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
   },
   {
-    path: 'p1',
-    loadChildren: () => import('./p1/p1.module').then( m => m.P1PageModule)
-  },
-  {
-    path: 'p2',
-    loadChildren: () => import('./p2/p2.module').then( m => m.P2PageModule)
-  },
-  {
-    path: 'p3',
-    loadChildren: () => import('./p3/p3.module').then( m => m.P3PageModule)
-  },
-  {
-    path: 'p4',
-    loadChildren: () => import('./p4/p4.module').then( m => m.P4PageModule)
-  },
-  {
-    path: 'p5',
-    loadChildren: () => import('./p5/p5.module').then( m => m.P5PageModule)
-  },
-  {
-    path: 'p6',
-    loadChildren: () => import('./p6/p6.module').then( m => m.P6PageModule)
-  },
-  {
-    path: 'p7',
-    loadChildren: () => import('./p7/p7.module').then( m => m.P7PageModule)
-  },
-  {
     path: 'carrinho',
     loadChildren: () => import('./carrinho/carrinho.module').then( m => m.CarrinhoPageModule)
   },
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'admin-pecas',
+    loadChildren: () => import('./admin-pecas/admin-pecas.module').then( m => m.AdminPecasPageModule)
+  },
+  {
+    path: 'produto/:id',
+    loadChildren: () => import('./produto-detalhe/produto-detalhe.module').then(m => m.ProdutoDetalhePageModule)
   },
   
  
